@@ -1,0 +1,91 @@
+*bookmarks.txt*                           Plugin to view browser bookmarks
+
+==============================================================================
+CONTENTS                                                  *bookmarks-contents*
+
+    1.Intro........................................|bookmarks-intro|
+    2.Installation.................................|bookmarks-installation|
+    3.Setup........................................|bookmarks-setup|
+    4.Commands.....................................|bookmarks-commands|
+    5.About........................................|bookmarks-about|
+    6.License......................................|bookmarks-license|
+
+
+==============================================================================
+1. Intro 					              *bookmarks-intro*
+
+bookmarks.vim requires vim9 and it helps the user to get the browser
+bookmarks/favorites and  the user could select one to to open in default
+browser.
+
+For now, it only supports chrome / edge and these two are enabled by default.
+Firefox is not in support.
+
+
+==============================================================================
+2.Installation                                          *bookmarks-installation*
+
+You can install the plugin with your favorite plugin manager.
+
+------------------------------------------------------------------------------
+
+You can do it with vim-plug
+ >
+ Plug 'jerrywang1981/bookmarks.vim'
+
+
+==============================================================================
+3.Setup                                                        *bookmarks-setup*
+
+The plug works out of box. But you can still configure it.
+------------------------------------------------------------------------------
+
+Usage:
+>
+  " this is default configuration
+  let g:vim_bookmarks_browsers = ["chrome", "edge"]
+  " most likely you don't want this one.
+  " file / fileName -- only requires one
+  "  type / parser  -- only requires one, parser should be function
+  let g:vim_bookmarks_config = {
+    \ "Windows" : {
+    \   "chrome" : {
+    \      "file": [ "AppData", "Local", "Google", "Chrome", "User Data", "Default", "Bookmarks" ],
+    \      "fileName" : "bookmark file full path",
+    \      "type" : "chrome"
+    \      "parser" : XXXX
+    \ }
+    \   }
+    \ }
+<
+
+==============================================================================
+4.Commands                                                  *bookmarks-commands*
+
+:BookmarksCleanCache                                       *BookmarksCleanCache*
+
+You can clean cache of bookmarks in vim (not in browser)
+
+
+:Bookmarks                                                           *Bookmarks*
+
+If you have fzf `junegunn/fzf` installed, it will open fzf to list all bookmarks.
+otherwise it uses vim command.
+
+==============================================================================
+5.About 						       *bookmarks-about*
+
+The maintainers are:
+  Jerry Wang <jerrywang1981@outlook.com>
+  github: jerrywang1981
+
+Find latest version at:
+  https://github.com/jerrywang1981/bookmarks.vim
+
+==============================================================================
+6.License                                                    *bookmarks-license*
+
+bookmarks.vim is released under MIT license.
+
+vim:tw=78:ts=8:ft=help:norl:
+
