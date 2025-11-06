@@ -24,6 +24,7 @@ def Bfzf(bang: bool)
   var Fwrap = fzf#wrap
   Frun(Fwrap({
     source: bookmarks.CompleteList(),
+    options: ['--prompt', 'Browser bookmarks>'],
     sink: (q: string) => {
       var url = matchstr(q, '\[\((\zshttp[s]\=://.*\..*\ze)\)\]')
       bookmarks.OpenBookmark(url)
