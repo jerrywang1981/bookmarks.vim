@@ -15,7 +15,7 @@ final cache: dict<any> = {}
 const parsers = { chrome: chrome.Parse, edge: chrome.Parse }
 
 if !exists("g:vim_bookmarks_browsers")
-  g:vim_bookmarks_browsers = ["chrome", "edge"]
+  g:vim_bookmarks_browsers = ["chrome", "edge", "chromium"]
 endif
 
 const default_config: dict<dict<dict<any>>> = {
@@ -33,8 +33,8 @@ const default_config: dict<dict<dict<any>>> = {
     }
   },
   Linux: {
-    chrome: {
-      file: [".config", "google-chrome", "Default", "Bookmarks"],
+    chromium: {
+      file: [".config", "chromium", "Default", "Bookmarks"],
       type: "chrome"
     }
   },
